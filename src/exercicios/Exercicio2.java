@@ -7,25 +7,24 @@ A média de aprovação é >= 7.0;
 a média de recuperação é >= 5.0 e < 7.0; e 
 a média do reprovado é < 5.0
 */
-public class Exercicio2 extends Base {
+class Exercicio2 extends App {
+
+	void logic() {
+		print("Entre com a primeira nota:");
+		float nota1 = parseFloat(input());
+		float nota2 = parseFloat(input("Entre com a segunda nota:"));
+		float nota3 = input("Entre com a terceira nota:", Float.class);
+		float media = (nota1 + nota2 + nota3) / 3;
+		if (media >= 7)
+			print("Aprovado com média " + media);
+		else if (media >= 5)
+			print("Recuperação com média " + media);
+		else
+			print("Reprovado com média " + media);
+	}
 
 	public static void main(String[] args) {
-
-		Float nota1, nota2, nota3, media;
-		escrever("Entre com a primeira nota:");
-		nota1 = ler(Decimal);
-		System.out.println("Entre com a segunda nota:");
-		nota2 = ler(Decimal);
-		System.out.println("Entre com a terceira nota:");
-		nota3 = ler(Decimal);
-		media = (nota1 + nota2 + nota3) / 3;
-		if (media >= 7) {
-			escrever("Aprovado com média " + media);
-		} else if (media >= 5) {
-			escrever("Recuperação com média " + media);
-		} else {
-			escrever("Reprovado com média " + media);
-		}
+		create("exercicios.Exercicio2");
 	}
 
 }
