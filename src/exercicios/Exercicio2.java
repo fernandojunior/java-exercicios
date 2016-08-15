@@ -10,17 +10,16 @@ a média do reprovado é < 5.0
 class Exercicio2 extends App {
 
 	void logic() {
-		print("Entre com a primeira nota:");
-		float nota1 = parseFloat(input());
-		float nota2 = parseFloat(input("Entre com a segunda nota:"));
-		float nota3 = input("Entre com a terceira nota:", Float.class);
-		float media = (nota1 + nota2 + nota3) / 3;
+		Float nota1 = floatify(input("Entre com a primeira nota:"));
+		Float nota2 = floatify(input("Entre com a segunda nota:"));
+		Float nota3 = floatify(input("Entre com a terceira nota:"));
+		Float media = (nota1 + nota2 + nota3) / 3;
 		if (media >= 7)
-			print("Aprovado com média " + media);
+			print("Aprovado com média", media);
 		else if (media >= 5)
-			print("Recuperação com média " + media);
+			print("Recuperação com média", media);
 		else
-			print("Reprovado com média " + media);
+			print("Reprovado com média", media);
 	}
 
 	public static void main(String[] args) {

@@ -7,16 +7,14 @@ Para isso solicite o ano de nascimento do usuário e o ano atual.
 class Exercicio1 extends App {
 
 	void logic() {
-		print("Entre com o ano atual:");
-		int anoAtual = input(Integer.class);
-		print("Entre com o ano de nascimento:");
-		int anoNascimento = input(Integer.class);
-		int qtdeAnos = anoAtual - anoNascimento;
-		print("Em " + anoAtual + " você faz (ou já fez) " + qtdeAnos + " anos!");
+		Integer anoAtual = integerify(input("Entre com o ano atual:"));
+		Integer anoNascimento = integerify(input("Entre com o ano de nascimento:"));
+		Integer qtdeAnos = anoAtual - anoNascimento;
+		print("Em", anoAtual, "você faz (ou já fez)", qtdeAnos, "anos!");
 	}
 
 	public static void main(String[] args) {
-		create("exercicios.Exercicio1");
+		create(Exercicio1.class);
 	}
 
 }
