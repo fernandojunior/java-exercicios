@@ -97,6 +97,10 @@ public class Utils {
 		System.out.println(join(" ", messages));
 	}
 
+	public static Class<?> type(Object object) {
+		return object.getClass();
+	}
+
 	public static <T> T parse(Class<T> type, String value) {
 		return Parser.parse(type, value);
 	}
