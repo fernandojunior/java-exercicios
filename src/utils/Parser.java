@@ -15,7 +15,7 @@ public class Parser {
 	@SuppressWarnings("unchecked")
 	public static <T> T parse(String parseName, String value) {
 		try {
-			Method method = Reflection.getAnyMethod(Parser.class, parseName, String.class);
+			Method method = Reflection.getAnyMethod(Parser.class, parseName, value.getClass());
 			return (T) method.invoke(null, value);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -127,12 +127,12 @@ public class Parser {
 		return Double.valueOf(value);
 	}
 
-	public static Boolean parseBoolean(Object value) {
-		return Utils.list(1, '1', "1", "true").contains(value) ? true : false;
+	public static Boolean parseBoolean(boolean value) {
+		return value;
 	}
 
-	public static Boolean parseBool(Object value) {
-		return parseBoolean(value);
+	public static Boolean parseBoolean(Object value) {
+		return Utils.list(1, '1', "1", "true").contains(value) ? true : false;
 	}
 
 }

@@ -189,8 +189,12 @@ public class Utils {
 		return Parser.parseDouble(value);
 	}
 
-	public static Boolean parseBool(Object value) {
-		return Parser.parseBool(value);
+	public static Boolean parseBoolean(boolean value) {
+		return Parser.parseBoolean(value);
+	}
+
+	public static Boolean parseBoolean(Object value) {
+		return Parser.parseBoolean(value);
 	}
 
 }
