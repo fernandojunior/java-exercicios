@@ -1,6 +1,6 @@
 # java-exercises
 
-Basic exercices to learn programming.
+Basic exercices to learn programming with Java.
 
 ## Contributing
 
