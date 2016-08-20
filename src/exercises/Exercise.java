@@ -5,18 +5,13 @@ import utils.Window;
 
 public abstract class Exercise extends Utils {
 
-	public Exercise() {
-		main();
-	}
-
-	abstract void main();
-
-	public static void createExercice(int exerciceNumber) {
-		create("exercises.Exercise" + exerciceNumber);
-	}
+	abstract void logic();
 
 	public static void main(String[] args) {
-		createExercice(parseInt(Window.input("Digite o número do Exercício:")));
+		int numero = parseInt(Window.input("Digite o número do Exercício:"));
+		String exercicioName = "exercises.Exercise" + numero;
+		Exercise exercicio = create(exercicioName);
+		exercicio.logic();
 	}
 
 }

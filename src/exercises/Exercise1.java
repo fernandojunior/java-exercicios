@@ -7,7 +7,7 @@ import utils.Window;
  */
 public class Exercise1 extends Exercise {
 
-	void main() {
+	void logic() {
 		String nome = Window.input("Digite seu nome:");
 		int idade = parseInt(Window.input("Digite sua idade:"));
 		Window.alert("Seu nome é", nome, "e", "seu idade é", idade);

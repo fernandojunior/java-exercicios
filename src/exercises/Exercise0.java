@@ -5,7 +5,7 @@ package exercises;
  */
 public class Exercise0 extends Exercise {
 
-	void main() {
+	void logic() {
 		String nome = input("Digite seu nome:");
 		int idade = parseInt(input("Digite sua idade:"));
 		print("Seu nome é", nome, "e", "seu idade é", idade);

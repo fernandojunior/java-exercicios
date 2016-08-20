@@ -9,7 +9,7 @@ import utils.Window;
  */
 public class Exercise3 extends Exercise {
 
-	void main() {
+	void logic() {
 		float nota1 = parseFloat(Window.input("Entre com a primeira nota:"));
 		float nota2 = parseFloat(Window.input("Entre com a segunda nota:"));
 		float nota3 = parseFloat(Window.input("Entre com a terceira nota:"));
