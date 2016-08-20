@@ -8,9 +8,9 @@ public abstract class Exercise extends Utils {
 	abstract void logic();
 
 	public static void main(String[] args) {
-		int numero = parseInt(Window.input("Digite o número do Exercício:"));
-		String exercicioName = "exercises.Exercise" + numero;
-		Exercise exercicio = create(exercicioName);
+		int numeroExercicio = parseInt(Window.input("Digite o número do Exercício:"));
+		String nomeExercicio = "exercises.Exercise" + numeroExercicio;
+		Exercise exercicio = create(nomeExercicio);
 		exercicio.logic();
 	}
 
