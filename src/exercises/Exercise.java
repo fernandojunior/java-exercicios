@@ -1,11 +1,22 @@
-package exercicios;
+package exercises;
 
-public abstract class App extends Utils {
+import utils.Utils;
+import utils.Window;
 
-	public App() {
-		logic();
+public abstract class Exercise extends Utils {
+
+	public Exercise() {
+		main();
 	}
 
-	abstract void logic();
+	abstract void main();
+
+	public static void createExercice(int exerciceNumber) {
+		create("exercises.Exercise" + exerciceNumber);
+	}
+
+	public static void main(String[] args) {
+		createExercice(parseInt(Window.input("Digite o número do Exercício:")));
+	}
 
 }

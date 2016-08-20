@@ -1,20 +1,16 @@
-package exercicios;
+package exercises;
 
-/*
-Determine qual é a idade que o usuário faz no ano atual. 
-Para isso solicite o ano de nascimento do usuário e o ano atual.
+/**
+ * Determine qual é a idade que o usuário faz no ano atual. Para isso solicite o
+ * ano de nascimento do usuário e o ano atual.
  */
-class Exercicio1 extends App {
+public class Exercise2 extends Exercise {
 
-	void logic() {
-		Integer anoAtual = integerify(input("Entre com o ano atual:"));
-		Integer anoNascimento = integerify(input("Entre com o ano de nascimento:"));
-		Integer qtdeAnos = anoAtual - anoNascimento;
-		print("Em", anoAtual, "você faz (ou já fez)", qtdeAnos, "anos!");
-	}
-
-	public static void main(String[] args) {
-		create(Exercicio1.class);
+	void main() {
+		int anoAtual = parseInt(input("Entre com o ano atual:"));
+		int anoNascimento = parseInt(input("Entre com o ano de nascimento:"));
+		int idade = anoAtual - anoNascimento;
+		print("Em", anoAtual, "você faz (ou já fez)", idade, "anos!");
 	}
 
 }
