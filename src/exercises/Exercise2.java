@@ -6,7 +6,7 @@ package exercises;
  */
 public class Exercise2 extends Exercise {
 
-	void logic() {
+	void main() {
 		int anoAtual = parseInt(input("Entre com o ano atual:"));
 		int anoNascimento = parseInt(input("Entre com o ano de nascimento:"));
 		int idade = anoAtual - anoNascimento;
