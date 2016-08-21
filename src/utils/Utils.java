@@ -1,12 +1,13 @@
 package utils;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -68,26 +69,18 @@ public class Utils {
 	}
 
 	@SuppressWarnings("unchecked")
-	public static <T> Stream<T> stream(T... objects) {
-		return Stream.of(objects);
-	}
-
-	public static <T> Stream<T> stream(List<T> objects) {
-		return objects.stream();
-	}
-
-	public static <T> Stream<T> stream(Set<T> objects) {
-		return objects.stream();
-	}
-
-	@SuppressWarnings("unchecked")
 	public static <T> T[] array(T... objects) {
 		return objects;
 	}
 
 	@SuppressWarnings("unchecked")
-	public static <T> T[] array(List<T> objects, Class<T> type) {
-		return objects.toArray((T[]) Array.newInstance(type, objects.size()));
+	public static <T> T[] array(Collection<T> objects) {
+		return (T[]) objects.toArray();
+	}
+
+	@SuppressWarnings("unchecked")
+	public static <T> T[] array(Stream<T> objects) {
+		return (T[]) objects.toArray();
 	}
 
 	@SafeVarargs
@@ -95,13 +88,35 @@ public class Utils {
 		return Arrays.asList(objects);
 	}
 
+	public static <T> List<T> list(Stream<T> objects) {
+		return objects.collect(Collectors.toList());
+	}
+
 	@SuppressWarnings("unchecked")
 	public static <T> Set<?> set(T... objects) {
 		return set(list(objects));
 	}
 
-	public static <T> Set<?> set(List<T> objects) {
+	public static <T> Set<?> set(Collection<T> objects) {
 		return new HashSet<T>(objects);
+	}
+
+	@SuppressWarnings("unchecked")
+	public static <T> Stream<T> stream(T... objects) {
+		return Stream.of(objects);
+	}
+
+	public static <T> Stream<T> stream(Collection<T> objects) {
+		return objects.stream();
+	}
+
+	public static List<Integer> range(int stop) {
+		return range(0, stop);
+	}
+
+	// TODO step argument with IntStream.iterate(start, n->n+1).limit(stop-1)
+	public static List<Integer> range(int start, int stop) {
+		return IntStream.range(start, stop).boxed().collect(Collectors.toList());
 	}
 
 	public static void print(Object message) {
