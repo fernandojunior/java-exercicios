@@ -2,8 +2,10 @@ package utils;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -66,27 +68,40 @@ public class Utils {
 	}
 
 	@SuppressWarnings("unchecked")
-	public static <T> Stream<T> stream(T... object) {
-		return Stream.of(object);
+	public static <T> Stream<T> stream(T... objects) {
+		return Stream.of(objects);
 	}
 
-	public static <T> Stream<T> stream(List<T> object) {
-		return object.stream();
+	public static <T> Stream<T> stream(List<T> objects) {
+		return objects.stream();
+	}
+
+	public static <T> Stream<T> stream(Set<T> objects) {
+		return objects.stream();
+	}
+
+	@SuppressWarnings("unchecked")
+	public static <T> T[] array(T... objects) {
+		return objects;
+	}
+
+	@SuppressWarnings("unchecked")
+	public static <T> T[] array(List<T> objects, Class<T> type) {
+		return objects.toArray((T[]) Array.newInstance(type, objects.size()));
 	}
 
 	@SafeVarargs
-	public static <T> List<T> list(T... object) {
-		return Arrays.asList(object);
+	public static <T> List<T> list(T... objects) {
+		return Arrays.asList(objects);
 	}
 
 	@SuppressWarnings("unchecked")
-	public static <T> T[] array(T... object) {
-		return object;
+	public static <T> Set<?> set(T... objects) {
+		return set(list(objects));
 	}
 
-	@SuppressWarnings("unchecked")
-	public static <T> T[] array(List<T> o, Class<T> type) {
-		return o.toArray((T[]) Array.newInstance(type, o.size()));
+	public static <T> Set<?> set(List<T> objects) {
+		return new HashSet<T>(objects);
 	}
 
 	public static void print(Object message) {
