@@ -1,5 +1,6 @@
 package utils;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
@@ -66,6 +67,16 @@ public class Utils {
 
 	public static String join(CharSequence delimiter, Object... object) {
 		return stream(object).map(Object::toString).collect(Collectors.joining(delimiter));
+	}
+
+	public static <T> int len(Object objects) {
+		if (objects.getClass().isArray())
+			return Array.getLength(objects);
+		throw new RuntimeException("Object is not an array.");
+	}
+
+	public static int len(Collection<?> objects) {
+		return objects.size();
 	}
 
 	@SuppressWarnings("unchecked")

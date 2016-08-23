@@ -132,7 +132,7 @@ public class Parser {
 	}
 
 	public static Boolean parseBoolean(Object value) {
-		return Utils.list(1, '1', "1", "true").contains(value) ? true : false;
+		return Utils.list(1, '1', "1", "true").contains(value);
 	}
 
 }
